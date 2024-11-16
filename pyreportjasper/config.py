@@ -16,6 +16,7 @@ class Config:
     dbType = None
     dbUrl = None
     dbUser = None
+    dbOracleMultitenant = False
     verbose = None
     input = None
     jdbcDir = None

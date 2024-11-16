@@ -76,6 +76,7 @@ class PyReportJasper:
                 'jdbc_url': 'dbUrl',
                 'jdbc_dir': 'jdbcDir',
                 'db_sid': 'dbSid',
+                'db_multitenant': 'dbOracleMultitenant',
                 'xml_xpath': 'xmlXpath',
                 'data_file': 'dataFile',
                 'data_url': 'data_url',

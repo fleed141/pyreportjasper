@@ -85,6 +85,7 @@ class Db:
         port = None
         sid = None
         connect_string = None
+        multitenant = None
 
         if dbtype == "mysql":
             driver = config.dbDriver
@@ -100,7 +101,9 @@ class Db:
             driver = config.dbDriver
             port = config.dbPort or 1521
             sid = config.dbSid
-            connect_string = "jdbc:oracle:thin:@{}:{}:{}".format(host, port, sid)
+            multitenant = config.dbOracleMultitenant
+            connect_string = ("jdbc:oracle:thin:@{}:{}/{}" if multitenant else "jdbc:oracle:thin:@{}:{}:{}").format(host, port, sid)
+            
         elif dbtype == "generic":
             driver = config.dbDriver
             connect_string = config.dbUrl
